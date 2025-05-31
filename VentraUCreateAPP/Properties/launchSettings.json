@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "VentraUCreateAPP (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "VentraUCreateAPP (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
