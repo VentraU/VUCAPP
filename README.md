@@ -8,3 +8,4 @@ VUCAPP — это современная замена PHP Devel Studio, напи
 К сожалению пока-что приложение в разработке, и она ещё в статусе Альфа, если вы будете её использовать на повседневно то всю ответсвенность берёте на себя.
 
 <img width="1293" height="772" alt="image" src="https://github.com/user-attachments/assets/98bf3dfe-52e6-42fc-9330-ce354d8c85e0" />
+<img width="1293" height="771" alt="image" src="https://github.com/user-attachments/assets/95a8874b-93fa-43e3-9213-ddfed017e921" />
