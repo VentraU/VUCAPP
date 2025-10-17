@@ -38,7 +38,7 @@ README.md
 ```
 VUCAPPinstaller1.2.exe
 ```
-2. Откройте `VUCAPPinstaller1.2.exe` в Visual Studio 2022+.
+2. Откройте `VUCAPPinstaller1.2.exe` и нажмите Установить+.
 3. Убедитесь, что установлен **.NET 8** и **Windows App SDK**.
 4. Соберите и запустите проект.
 
