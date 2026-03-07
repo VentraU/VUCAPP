@@ -4,7 +4,7 @@
 
 <img width="1293" height="785" alt="image" src="https://github.com/user-attachments/assets/b74eb3cd-c727-42cf-94da-0b79f71f29dd" />
 <img width="1293" height="786" alt="image" src="https://github.com/user-attachments/assets/3e38fcd5-807e-4850-97f2-d7109d26df1c" />
-<button style="margin-top: 8px; height: 32px;">VUCAPP</button>
+<button style="margin-top: 8px; height: 32px; width: 200px; outline: none; border: none; background: #F00; color: #fff; border-radius: 32px;">VUCAPP</button>
 
 ## 🔧 Возможности (🪟 Windows) (в процессе разработки):
 
