@@ -1,9 +1,20 @@
-# ⚒️ VUCAPP — VentraUniverseCreateAPP
-**VUCAPP** — это современная альтернатива **PHP Devel Studio**, разработанная на языке **HTML, JS**.
-Проект ориентирован на ленивых разработчиков и новичков, которым нужен простой, визуальный способ создания приложений под Windows и ColdOS.
+<div align="center">
+   <img width="100" src="./images/logo.png" alt="Logogram Vucapp">
 
-<img width="1293" height="785" alt="image" src="https://github.com/user-attachments/assets/b74eb3cd-c727-42cf-94da-0b79f71f29dd" />
-<img width="1293" height="786" alt="image" src="https://github.com/user-attachments/assets/3e38fcd5-807e-4850-97f2-d7109d26df1c" />
+  
+</div>
+   
+<div align="center">
+  <h1><b>VentraUniverseCreateAPP</b></h1>
+  <p><i>Современная альтернатива <b>PHP Devel Studio</b>, разработанная на языке <b>HTML, JS</b>.</i></p>
+</div>
+<h6 align="center">
+VUCAPP — это современная альтернатива **PHP Devel Studio**, разработанная на языке **HTML, JS**.
+Проект ориентирован на ленивых разработчиков и новичков, которым нужен простой, визуальный способ создания приложений под Windows и ColdOS.
+</h6>
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/b74eb3cd-c727-42cf-94da-0b79f71f29dd" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/3e38fcd5-807e-4850-97f2-d7109d26df1c" />
 
 ## 🔧 Возможности (🪟 Windows) (в процессе разработки):
 
@@ -22,7 +33,8 @@
 - 🚀 Возможность сборки и компиляции проекта в `.coldapp`
 - 📜 Подключение JS кода, к компонента
 
-> Поддержка ColdOS приложений, будет отложена дата неизвестна 💀
+> [!NOTE]
+> Поддержка ColdOS приложений, будет отложена дата: ??.??.????
 
 ## 🚧 Статус: Альфа
 Приложение находится в активной разработке.
