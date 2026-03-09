@@ -1,5 +1,5 @@
 <div align="center">
-   <img width="100" src="./images/logo.png" alt="Logogram Vucapp">
+   <img width="100" src="./images/Logo.png" alt="Logogram Vucapp">
 
   
 </div>
