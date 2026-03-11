@@ -1,51 +1,291 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventra Universe CreateAPP</title>
-    <style>
-        
-body {
-    background: #F0F0F0;
-}
-        
-    </style>
+    <title>VUCAPP - VentraUniverseCreateAPP</title>
+    <!-- Подключение внешнего файла стилей -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Ventra Universe CreateAPP</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+
+    <nav>
+        <div class="nav-left">
+            <div class="logo">
+                <img src="https://github.com/VentraKat/VUCAPP/raw/main/images/Logo.png" alt="VUCAPP Logo" class="nav-logo-img">
+                VUCAPP
+            </div>
+            <!-- Навигация по вкладкам -->
+            <div class="nav-links">
+                <button class="tab-link active" onclick="openTab(event, 'tab-main')">Главная</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-features')">Возможности</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-install')">Как установить</button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button id="theme-toggle" class="btn" aria-label="Переключить тему">🌙</button>
+            <a href="https://github.com/VentraKat/VUCAPP/releases/download/1.0/VUCAPP.zip" target="_blank" class="btn btn-primary">Скачать IDE</a>
+        </div>
+    </nav>
+
     <main>
-        <section id="about">
-            <h2>About Ventra Universe CreateAPP</h2>
-            <p>Ventra Universe CreateAPP is an innovative platform designed to empower users to create and manage their own unique applications effortlessly. Our mission is to simplify the application development process and make it accessible to everyone.</p>
-        </section>
-        <section id="features">
-            <h2>Features</h2>
-            <ul>
-                <li>User-friendly interface</li>
-                <li>Customizable templates</li>
-                <li>Real-time collaboration tools</li>
-                <li>Extensive library of pre-built components</li>
-                <li>Responsive design for mobile and desktop</li>
-                <li>Analytics and reporting tools</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>If you have any questions, feel free to <a href="mailto:support@ventrauniverse.com">email us</a>.</p>
-        </section>
+        <!-- Вкладка 1: Главная (только самое основное) -->
+        <div id="tab-main" class="tab-content active">
+            <header class="hero">
+                <div class="status-badge">🚧 Активная Бета-версия</div>
+                <img src="https://github.com/VentraKat/VUCAPP/raw/main/images/Logo.png" alt="VUCAPP Logo" class="hero-logo">
+                <h1>VentraUniverseCreateAPP</h1>
+                <p class="subtitle">Новая современная альтернатива PHP Devel Studio. Мощная и простая визуальная среда разработки для ленивых разработчиков и новичков.</p>
+                <div class="hero-buttons">
+                    <a href="https://github.com/VentraKat/VUCAPP/releases/download/1.0/VUCAPP.zip" target="_blank" class="btn btn-primary">Скачать VUCAPP</a>
+                    <button class="btn" onclick="openTab(event, 'tab-features')">Изучить возможности</button>
+                </div>
+            </header>
+
+            <section id="about">
+                <h2>Что такое VUCAPP?</h2>
+                <div class="card">
+                    <p><strong>VUCAPP (VentraUniverseCreateAPP)</strong> — это инновационная среда разработки приложений (IDE) с полноценным визуальным интерфейсом. Мы написали саму программу на современных веб-технологиях (HTML, JS), чтобы сделать её легкой и быстрой.</p>
+                    <p>Наша главная миссия — вернуть магию старых добрых <strong>Delphi</strong> и <strong>Visual Basic IDE</strong>, а также стать достойной бесплатной заменой устаревшему <strong>DevelStudio</strong>. Мы хотим, чтобы создание программ было доступным, интуитивно понятным и не требовало написания тысяч строк кода для базовых вещей.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Вкладка 2: Возможности -->
+        <div id="tab-features" class="tab-content">
+            <section id="audience">
+                <h2>Для кого мы создали VUCAPP?</h2>
+                <div class="grid">
+                    <div class="card text-center">
+                        <div style="font-size: 2.5rem; margin-bottom: 16px;">🎓</div>
+                        <h3>Новички в IT</h3>
+                        <p>Идеальный старт для тех, кто только делает первые шаги в программировании. Собирайте интерфейс мышкой и изучайте логику постепенно.</p>
+                    </div>
+                    <div class="card text-center">
+                        <div style="font-size: 2.5rem; margin-bottom: 16px;">⚡</div>
+                        <h3>"Ленивые" разработчики</h3>
+                        <p>Зачем писать boilerplate-код? VUCAPP берет на себя рутину по созданию UI и генерации базовой структуры проекта.</p>
+                    </div>
+                    <div class="card text-center">
+                        <div style="font-size: 2.5rem; margin-bottom: 16px;">🚀</div>
+                        <h3>Быстрое прототипирование</h3>
+                        <p>Нужно срочно набросать рабочий инструмент под Windows? Соберите его за пару минут и скомпилируйте в готовый .exe файл.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features">
+                <h2>Платформы и Возможности</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>💻 Windows 11 (C# / WinUI 3)</h3>
+                        <p>Создавайте нативные приложения с современным дизайном Windows (WinUI 3).</p>
+                        <ul>
+                            <li>Визуальный конструктор дизайна (Drag & Drop интерфейс).</li>
+                            <li>Богатый набор компонентов: кнопки, чекбоксы, поля ввода, списки.</li>
+                            <li><strong>Автоматическая генерация</strong> чистого исходного кода C#.</li>
+                            <li>Удобное подключение вашей логики к событиям компонентов.</li>
+                            <li>Сборка проекта в один независимый <code>.exe</code> файл в один клик.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>❄️ ColdOS (ColdAPP)</h3>
+                        <p>Разработка под нашу будущую операционную систему ColdOS.</p>
+                        <ul>
+                            <li>Адаптированный визуальный конструктор дизайна.</li>
+                            <li>Авто-генерация кода в строгой директной структуре.</li>
+                            <li>Использование JavaScript для написания логики компонентов.</li>
+                            <li>Собственный формат компиляции проектов <code>.coldapp</code>.</li>
+                            <li><em>Примечание: Поддержка ColdOS на данный момент отложена.</em></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="how-it-works">
+                <h2>Как происходит разработка?</h2>
+                <div class="grid">
+                    <div class="card">
+                        <div class="step-number">1</div>
+                        <h3>Дизайн</h3>
+                        <p>Откройте визуальный редактор. Перетащите нужные элементы на рабочую область. Настройте их размер, цвет и свойства через удобную панель.</p>
+                    </div>
+                    <div class="card">
+                        <div class="step-number">2</div>
+                        <h3>Логика</h3>
+                        <p>Выберите элемент и привяжите к нему действие. VUCAPP автоматически сгенерирует нужный метод на C#, а вам останется только дописать нужное действие.</p>
+                    </div>
+                    <div class="card">
+                        <div class="step-number">3</div>
+                        <h3>Компиляция</h3>
+                        <p>Нажмите кнопку "Собрать". VUCAPP под капотом использует .NET SDK, чтобы скомпилировать ваш проект и выдать вам готовый, рабочий .exe файл.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="support">
+                <h2>Бесплатно навсегда</h2>
+                <div class="card text-center" style="align-items: center;">
+                    <p style="max-width: 600px;">VUCAPP — это бесплатный проект, который создается для сообщества разработчиков. Вы можете пользоваться всеми функциями программы абсолютно бесплатно.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Вкладка 3: Как установить -->
+        <div id="tab-install" class="tab-content">
+            <section id="how-to">
+                <h2>Установка и Запуск VUCAPP</h2>
+                
+                <div class="card" style="margin-bottom: 24px;">
+                    <h3>1. Что требуется перед установкой</h3>
+                    <ul style="margin-top: 10px;">
+                        <li>Операционная система: <strong>Windows 10 или Windows 11</strong>.</li>
+                        <li>Установленный <strong>.NET SDK</strong> (необходим для компиляции проектов в .exe).</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="margin-bottom: 24px;">
+                    <h3>2. Как скачать</h3>
+                    <p>Скачайте последнюю версию программы в виде ZIP-архива по прямой ссылке:</p>
+                    <div style="margin-top: 16px;">
+                        <a href="https://github.com/VentraKat/VUCAPP/releases/download/1.0/VUCAPP.zip" target="_blank" class="btn btn-primary">Скачать VUCAPP.zip</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>3. Инструкция по установке</h3>
+                    <div class="code-block">
+                        1. Распакуйте скачанный архив VUCAPP.zip.<br>
+                        2. <strong>Важно:</strong> Переместите папку <code>vucapp</code> в корень диска <code>C:\</code> (чтобы путь был C:\vucapp).<br>
+                        3. Убедитесь, что у вас установлен .NET SDK. Если его нет, запустите установщик из папки <code>C:\vucapp\fixes\</code>.<br>
+                        4. <strong>Перед первой компиляцией:</strong> запустите файл <code>C:\vucapp\nugets\InstallNugets.bat</code>. В консоли введите версию <code>8.0.24</code> и нажмите Enter.<br>
+                        5. Запустите <code>C:\vucapp\launcher.exe</code>. После запуска брандмауэр может запросить сетевой доступ — обязательно подтвердите, нажав "ДА".
+                    </div>
+                    <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;">
+                        <em>* Так как приложение находится в стадии беты, стабильность пока не гарантирована. Использование на свой страх и риск.</em>
+                    </p>
+                </div>
+            </section>
+        </div>
     </main>
+
     <footer>
-        <p>&copy; 2026 Ventra Universe CreateAPP. All rights reserved.</p>
+        <p>© 2026 VentraUniverseCreateAPP. Создано с ❤️ для сообщества разработчиков.</p>
+        <p style="margin-top: 8px; opacity: 0.7;">Бесплатная и современная альтернатива DevelStudio.</p>
     </footer>
+
+    <!-- Контекстное меню Windows 11 -->
+    <div id="win11-context-menu" class="context-menu">
+        <div class="context-menu-item" onclick="window.history.back()">
+            <span class="fluent-icon">&#xE72B;</span>
+            <span>Назад</span>
+        </div>
+        <div class="context-menu-item" onclick="window.history.forward()">
+            <span class="fluent-icon">&#xE72A;</span>
+            <span>Вперед</span>
+        </div>
+        <div class="context-menu-item" onclick="location.reload()">
+            <span class="fluent-icon">&#xE72C;</span>
+            <span>Обновить</span>
+        </div>
+        <div class="context-menu-separator"></div>
+        <div class="context-menu-item" onclick="navigator.clipboard.writeText(window.getSelection().toString())">
+            <span class="fluent-icon">&#xE8C8;</span>
+            <span>Копировать</span>
+        </div>
+        <div class="context-menu-item" onclick="document.getElementById('theme-toggle').click()">
+            <span class="fluent-icon">&#xE793;</span>
+            <span>Переключить тему</span>
+        </div>
+        <div class="context-menu-separator"></div>
+        <div class="context-menu-item" onclick="window.open('https://github.com/VentraKat/VUCAPP/releases/download/1.0/VUCAPP.zip', '_blank')">
+            <span class="fluent-icon" style="color: var(--accent-color);">&#xE896;</span>
+            <span>Скачать последнюю версию VUCAPP</span>
+        </div>
+    </div>
+
+    <!-- Логика и скрипты -->
+    <script>
+        // --- ЛОГИКА ВКЛАДОК ---
+        function openTab(evt, tabId) {
+            // Скрываем весь контент
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            // Убираем класс active у всех кнопок
+            const tabLinks = document.getElementsByClassName("tab-link");
+            for (let i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+            }
+            // Показываем нужную вкладку
+            document.getElementById(tabId).classList.add("active");
+            
+            // Выделяем активную кнопку
+            if (evt) {
+                evt.currentTarget.classList.add("active");
+            } else {
+                // Если вызвано не кликом напрямую (например кнопка из Hero-блока)
+                const targetBtn = document.querySelector(`button[onclick="openTab(event, '${tabId}')"]`);
+                if(targetBtn) targetBtn.classList.add("active");
+            }
+            
+            // Прокручиваем наверх при смене вкладки
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- ЛОГИКА ТЕМЫ ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const savedTheme = localStorage.getItem('vucapp-theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateButtonIcon(savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            htmlElement.setAttribute('data-theme', 'dark');
+            updateButtonIcon('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('vucapp-theme', newTheme);
+            updateButtonIcon(newTheme);
+        });
+
+        function updateButtonIcon(theme) {
+            themeToggleBtn.textContent = theme === 'light' ? '🌙' : '☀️';
+        }
+
+        // --- ЛОГИКА КОНТЕКСТНОГО МЕНЮ ---
+        const contextMenu = document.getElementById('win11-context-menu');
+
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault(); 
+            contextMenu.style.display = 'block';
+            let x = e.clientX;
+            let y = e.clientY;
+            
+            if (x + contextMenu.offsetWidth > window.innerWidth) {
+                x = window.innerWidth - contextMenu.offsetWidth - 5;
+            }
+            if (y + contextMenu.offsetHeight > window.innerHeight) {
+                y = window.innerHeight - contextMenu.offsetHeight - 5;
+            }
+            
+            contextMenu.style.left = `${x}px`;
+            contextMenu.style.top = `${y}px`;
+        });
+
+        document.addEventListener('click', (e) => {
+            if (e.button !== 2) contextMenu.style.display = 'none';
+        });
+
+        window.addEventListener('scroll', () => {
+            contextMenu.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
