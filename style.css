@@ -285,8 +285,6 @@ h2 {
     transition: transform 0.3s ease;
 }
 
-.card:hover { transform: translateY(-10px); }
-
 .card h3 {
     margin-bottom: 16px;
     font-size: 1.3rem;
