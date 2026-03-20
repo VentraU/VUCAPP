@@ -144,24 +144,24 @@ nav {
 
 /* Кнопки в стиле Windows 11 */
 .btn {
-    background-color: var(--surface-solid);
-    color: var(--text-color);
-    padding-right: 11px;
-    padding-left: 11px;
-    border-radius: 5px;
     height: 32px;
+
+
+
+    background: var(--surface-solid);
+    color: var(--text-color);
+    outline: none;
+    border-radius: 5px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(0,0,0,0.1);
+    border-left: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    user-select: none;
     font-size: 14px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    padding-left: 11px;
+    padding-right: 11px;
     padding-top: -1px;
     padding-bottom: 1px;
-    border-top: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
-    border-left: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color2);
 }
 
 .btn:hover {
