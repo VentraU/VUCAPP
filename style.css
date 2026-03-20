@@ -152,10 +152,10 @@ nav {
     color: var(--text-color);
     outline: none;
     border-radius: 5px;
-    border-top: 1px solid rgba(0,0,0,0.1);
-    border-right: 1px solid rgba(0,0,0,0.1);
-    border-left: 1px solid rgba(0,0,0,0.1);
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color2);
     user-select: none;
     font-size: 14px;
     padding-left: 11px;
@@ -165,8 +165,12 @@ nav {
 }
 
 .btn:hover {
-    background-color: var(--border-color);
+    background: #F6F6F6;
 }
+    .button:active {
+        border-bottom: 1px solid rgb(229, 229, 229);
+        color: #616161;
+    }
 
 .btn-primary {
     background-color: var(--accent-color);
@@ -179,9 +183,17 @@ nav {
 
 [data-theme="dark"] .btn-primary { color: #000000; }
 .btn-primary:hover {
-    background-color: var(--accent-hover);
-    color: #ffffff;
+    background: #1875C5;
 }
+
+.btn-primary:active {
+        background: #3083CB;
+        color: rgba(255,255,255,0.7);
+        border-top: 1px solid #3083CB;
+        border-right: 1px solid #3083CB;
+        border-left: 1px solid #3083CB;
+        border-bottom: 1px solid #3083CB;
+    }
 [data-theme="dark"] .btn-primary:hover { color: #000000; }
 
 /* Вкладки: скрытие и плавное появление */
