@@ -146,9 +146,11 @@ nav {
 .btn {
     background-color: var(--surface-solid);
     color: var(--text-color);
-    padding: 6px 16px;
+    padding-right: 16px;
+    padding-left: 16px;
     border-radius: 5px;
-    font-size: 0.9rem;
+    height: 32px;
+    font-size: 14px;
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
