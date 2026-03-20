@@ -146,18 +146,16 @@ nav {
 .btn {
     background-color: var(--surface-solid);
     color: var(--text-color);
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-right: 11px;
+    padding-left: 11px;
     border-radius: 5px;
     height: 32px;
     font-size: 14px;
-    cursor: pointer;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-    font-family: inherit;
     padding-top: -1px;
     padding-bottom: 1px;
     border-top: 1px solid var(--border-color);
