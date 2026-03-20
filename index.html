@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VentraUniverseCreateAPP - Конструктор</title>
+    <title>VUCAPP - Главная</title>
     <!-- Подключение внешнего файла стилей -->
     <link rel="stylesheet" href="style.css">
     <link href="https://github.com/VentraKat/VUCAPP/raw/main/images/Logo.png" rel="icon">
@@ -237,6 +237,9 @@
             
             // Прокручиваем наверх при смене вкладки
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+
+            if (tabId === 'tab-main') { document.title = "VUCAPP - Главная"; } else if (tabId === 'tab-features') { document.title = "VUCAPP - Возможности"; } else if (tabId === 'tab-install') { document.title = "VUCAPP - Как установить"; }  
         }
 
         // --- ЛОГИКА ТЕМЫ ---
