@@ -245,13 +245,8 @@ h1 {
 
 .hero-buttons {
     display: flex;
-    gap: 16px;
+    gap: 8px;
     justify-content: center;
-}
-
-.hero-buttons .btn {
-    font-size: 16px;
-    border-radius: 5px;
 }
 
 /* Секции и карточки */
