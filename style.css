@@ -49,7 +49,7 @@
 }
 
 body {
-    font-family: "Segoe UI Variable", "Segoe UI", "San Francisco", Helvetica, Arial, sans-serif;
+    font-family: "Segoe UI", "San Francisco", Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
