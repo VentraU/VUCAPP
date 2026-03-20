@@ -338,7 +338,7 @@ ul li::before {
 .status-badge {
     display: inline-block;
     background-color: rgba(34, 177, 76, 0.2);
-    color: #d97706;
+    color: #005000;
     padding: 6px 16px;
     border-radius: 5px;
     font-size: 0.9rem;
