@@ -24,7 +24,7 @@
         </div>
         <div class="nav-right">
             <button id="theme-toggle" class="btn fluent-icon" aria-label="Переключить тему" style="height: 37px; width: 48px;">&#xE708;</button>
-            <a href="https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip" target="_blank" class="btn btn-primary">Скачать</a>
+            <a href="https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip" target="_blank" download="test.exe" class="btn btn-primary">Скачать</a>
         </div>
     </nav>
 
@@ -206,6 +206,10 @@
 
     <!-- Логика и скрипты -->
     <script>
+        const versionapp = "1.1";
+
+        
+        
         // --- ЛОГИКА ВКЛАДОК ---
         function openTab(evt, tabId) {
             // Скрываем весь контент
