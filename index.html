@@ -12,20 +12,23 @@
 
     <nav>
         <div class="nav-left">
-            <div class="logo">
+            <div class="logo" style="cursor: pointer;" onclick="openTab(event, 'tab-main'); document.getElementById('homelsad').className = 'tab-link active'">
                 <img src="https://github.com/VentraKat/VUCAPP/raw/main/images/Logo.png" alt="VUCAPP Logo" class="nav-logo-img">
                 VUCAPP
             </div>
             <!-- Навигация по вкладкам -->
-            <div class="nav-links">
-                <button class="tab-link active" onclick="openTab(event, 'tab-main')">Главная</button>
-                <button class="tab-link" onclick="openTab(event, 'tab-features')">Возможности</button>
-                <button class="tab-link" onclick="openTab(event, 'tab-install')">Как установить</button>
-            </div>
+
         </div>
         <div class="nav-right">
-            <button id="theme-toggle" class="btn fluent-icon" aria-label="Переключить тему" style="height: 32px; width: 42px;">&#xE708;</button>
-            <button onclick="openURL('https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip')" class="btn btn-primary">Скачать</a>
+                        <div class="nav-links">
+                <button class="tab-link active" id="homelsad" onclick="openTab(event, 'tab-main')">Главная</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-features')">Возможности</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-docs')">Документация</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-about')">О проекте</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-install')">Установка</button>
+            </div>
+            <button id="theme-toggle" class="btn fluent-icon"  aria-label="Переключить тему" style="height: 32px; width: 42px; font-size: 16px;">&#xE708;</button>
+            <button class="btn btn-primary" onclick="openURL('https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip')" style="height: 32px; display: flex; line-height: 32px;"><div style="font-family: 'Segoe Fluent Icons'; font-size: 15px;">&#xE896;</div><div style="margin-left: 8px;">Скачать</div></button>
         </div>
     </nav>
 
@@ -38,11 +41,11 @@
                 <h1>VentraUniverseCreateAPP</h1>
                 <p class="subtitle">Новая современная альтернатива PHP Devel Studio. Мощная и простая визуальная среда разработки для ленивых разработчиков и новичков.</p>
                 <div class="hero-buttons" style="margin-bottom: 8px;">
-                    <button onclick="openURL('https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip')" class="btn btn-primary">Скачать VUCAPP</a>
+                    <button onclick="openURL('https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip')" class="btn btn-primary">Скачать VUCAPP</button>
                     <button class="btn" onclick="openTab(event, 'tab-features')">Изучить возможности</button>
                 </div>
                 <div class="hero-buttons">
-                    <button onclick="openURL('https://github.com/VentraKat/VUCAPP')" class="btn">Просмотреть на GitHub</a>
+                    <button onclick="openURL('https://github.com/VentraKat/VUCAPP')" class="btn">Просмотреть на GitHub</button>
                 </div>
             </header>
 
@@ -53,25 +56,221 @@
                     <p>Наша главная миссия — вернуть магию старых добрых <strong>Delphi</strong> и <strong>Visual Basic IDE</strong>, а также стать достойной бесплатной заменой устаревшему <strong>DevelStudio</strong>. Мы хотим, чтобы создание программ было доступным, интуитивно понятным и не требовало написания тысяч строк кода для базовых вещей.</p>
                 </div>
             </section>
+
+            
+        <section>
+            <h2>Почему выбирают VUCAPP?</h2>
+            <div class="grid">
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xE945;</div>
+                    <h3 style="justify-content: center;">Молниеносный старт</h3>
+                    <p>Не нужно настраивать компиляторы и SDK вручную. Установил, запустил, начал собирать интерфейс.</p>
+                </div>
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xEDA4;</div>
+                    <h3 style="justify-content: center;">Визуальное программирование</h3>
+                    <p>Drag-and-drop конструктор. Создавайте сложные интерфейсы за минуты, не отвлекаясь на рутину верстки.</p>
+                </div>
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xE946;</div>
+                    <h3 style="justify-content: center;">Абсолютно бесплатно</h3>
+                    <p>Никаких подписок, PRO-версий и ограничений. Полный доступ ко всем функциям навсегда.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Технологии под капотом</h2>
+            <div class="grid">
+                <div class="card-clickable card">
+                    <div class="ems">&#xE7B8;</div>
+                    <h3>Генерация C# кода</h3>
+                    <p>VUCAPP генерирует чистый, читаемый код на C# с использованием современных паттернов. Вы получаете не просто исполняемый файл, а готовый проект для Visual Studio, который можно дорабатывать вручную.</p>
+                </div>
+                <div class="card-clickable card">
+                    <div class="ems">&#xE790;</div>
+                    <h3>WinUI 3</h3>
+                    <p>Все создаваемые приложения используют нативные элементы управления Windows 11. Ваши программы выглядят как часть операционной системы, с поддержкой Mica, Acrylic и темной темы.</p>
+                </div>
+            </div>
+        </section>
+        </div>
+
+
+                <div id="tab-about" class="tab-content">
+<header class="hero">
+            <h1>О проекте VUCAPP</h1>
+            <p class="subtitle">История создания, миссия и команда разработчиков.</p>
+        </header>
+
+        <section>
+            <div class="card text-center" style="align-items: center;">
+                <div class="status-badge" style="margin-bottom: 16px;">💡 Open Source проект</div>
+                <p style="max-width: 800px;">VUCAPP (VentraUniverseCreateAPP) родился как ответ на растущую сложность современных инструментов разработки. Мы хотели создать среду, которая была бы одновременно мощной и интуитивно понятной, как старые добрые Delphi или Visual Basic, но использующую современные технологии Windows 11.</p>
+                <p style="margin-top: 20px;">Код проекта полностью открыт и доступен на GitHub. Любой желающий может внести свой вклад в развитие, сообщить об ошибке или предложить новую функцию.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Команда разработчиков</h2>
+            <div class="grid">
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xE77B;</div>
+                    <h3 style="justify-content: center;">VentraKat</h3>
+                    <p>Основатель, архитектор и ведущий разработчик. Идея создания VUCAPP пришла в 2023 году после разочарования в устаревших IDE. Но всё таки вышла официально через 3 года :3</p>
+                </div>
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xE790;</div>
+                    <h3 style="justify-content: center;">а...</h3>
+                    <p>кушать тапок</p>
+                </div>
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xE909;</div>
+                    <h3 style="justify-content: center;">Бета-тестеры</h3>
+                    <p>Отдельное спасибо всем, кто сообщал об ошибках и помогал отлаживать стабильность на разных конфигурациях ПК.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Лицензия и использование</h2>
+            <div class="card">
+                    <div class="ems">&#xF000;</div>
+                    <h3>Лицензия MIT</h3>
+                <p>VUCAPP распространяется под лицензией MIT. Это означает, что вы можете:</p>
+                <ul>
+                    <li>Использовать программу в коммерческих и личных целях абсолютно бесплатно.</li>
+                    <li>Модифицировать исходный код и создавать свои форки.</li>
+                    <li>Распространять копии программы.</li>
+                </ul>
+                <p style="margin-top: 16px;">Единственное условие — сохранение уведомления об авторских правах и текста лицензии при распространении.</p>
+                <div class="code-block" style="margin-top: 20px;">
+Copyright (c) 2026 VentraKat
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Поддержать проект</h2>
+            <div class="card text-center">
+                <p>Если VUCAPP помог вам в работе или учебе, вы можете поддержать проект звездой на GitHub или рассказать о нем друзьям. Это лучший способ сказать "спасибо"!</p>
+                <div style="margin-top: 24px;">
+                    <button onclick="openURL('https://github.com/VentraKat/VUCAPP/')" class="btn btn-primary">Поставить звезду на GitHub</button>
+                </div>
+            </div>
+        </section>
+
+                </div>
+
+        <div id="tab-docs" class="tab-content">
+<header class="hero" style="margin-bottom: 20px;">
+            <h1>Руководство пользователя</h1>
+            <p class="subtitle">Всё, что нужно знать для создания первого приложения в VUCAPP.</p>
+        </header>
+
+        <section>
+            <div class="card">
+                    <div class="ems">&#xE838;</div>
+                    <h3>Структура проекта</h3>
+
+                
+                <p>После создания проекта в VUCAPP вы увидите следующую структуру папок:</p>
+                <div class="code-block">
+                    MyApp/<br>
+                    ├── compilefiles/       # Файлы сборки  (.xaml и код C#)<br>
+                    ├── build/              # Папка компиляции<br>
+                    ├── testrun/            # Папка для теста запуска<br>
+                    ├── userdata/           # Папка для хранений данных для компиляций<br>
+                    ├── app.dat             # Данные приложения<br>
+                    ├── [compiletest.bat]   # Скрипт для запуска компляции, не запускать вручную (тест)<br>
+                    ├── [compile.bat]       # Скрипт для запуска компляции, не запускать вручную<br>
+                    ├── events.cfg          # Точки данных секторов<br>
+                    ├── info.txt            # Информация о приложении<br>
+                    ├── project.json        # Кофигурация проекта<br>
+                    └── settings.cfg        # Параметры точки данных
+                </div>
+                <p>Вы можете редактировать файлы в визуальном редакторе.</p>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                    <div class="ems">&#xE8B0;</div>
+                    <h3>Работа с визуальным редактором</h3>
+                <ul>
+                    <li><strong>Панель элементов (Toolbox):</strong> Слева находятся все доступные компоненты. Перетащите Button, TextBox или CheckBox на форму.</li>
+                    <li><strong>Окно свойств (Properties):</strong> Справа вы можете изменить текст кнопки, цвет фона, шрифт, имя переменной...</li>
+                    <li><strong>Управление внешними файлами:</strong> Показывает все добавленные файлы вашего проекта.</li>
+                    <li><strong>Привязка событий:</strong> Во вкладке "События" выберите, например, "Клик" для кнопки. VUCAPP автоматически создаст метод в коде и откроет его для редактирования.</li>
+                </ul>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                    <div class="ems">&#xE713;</div>
+                    <h3>Компиляция и запуск</h3>
+                <p>Для сборки проекта используйте кнопку ▶️. VUCAPP выполнит следующие действия:</p>
+                <div class="code-block">
+                    1. Валидация XAML разметки на ошибки.<br>
+                    2. Генерация полного C# кода из визуального представления.<br>
+                    3. Вызов MSBuild (через .NET SDK) для компиляции проекта.<br>
+                    4. Копирование готового .exe файла в папку "testrun" вашего проекта.<br>
+                    5. Автоматический запуск приложения для тестирования.
+                </div>
+                <p>Если компиляция не удалась, вы увидите окно с ошибками, где можно найти строку с ошибкой для исправления.</p>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                    <div class="ems">&#xE82F;</div>
+                    <h3>Советы по эффективной работе</h3>
+                <ul>
+                    <li>Используйте <strong>User Controls</strong> для переиспользования сложных элементов интерфейса.</li>
+                    <li>Все созданные проекты по умолчанию сохраняются в <code>C:\vucapp\projects\</code>. Рекомендуем делать резервные копии.</li>
+                </ul>
+            </div>
+        </section>
         </div>
 
         <!-- Вкладка 2: Возможности -->
         <div id="tab-features" class="tab-content">
             <section id="audience">
+
+                        <header class="hero" style="margin-bottom: 30px;">
+            <h1>Всё для продуктивной разработки</h1>
+            <p class="subtitle">VUCAPP объединяет мощь визуального дизайна и гибкость чистого кода.</p>
+        </header>
+
+
                 <h2>Для кого мы создали VUCAPP?</h2>
                 <div class="grid">
-                    <div class="card text-center">
-                        <div style="font-size: 2.5rem; margin-bottom: 16px;">🎓</div>
-                        <h3>Новички в IT</h3>
+                    <div class="card-clickable card text-center" style="align-items: center;">
+                        <div class="emsy">&#xE7BE;</div>
+                        <h3 style="justify-content: center;">Новички в IT</h3>
                         <p>Идеальный старт для тех, кто только делает первые шаги в программировании. Собирайте интерфейс мышкой и изучайте логику постепенно.</p>
                     </div>
-                    <div class="card text-center">
-                        <div style="font-size: 2.5rem; margin-bottom: 16px;">⚡</div>
-                        <h3>"Ленивые" разработчики</h3>
+                    <div class="card-clickable card text-center" style="align-items: center;">
+                        <div class="emsy">&#xE945;</div>
+                        <h3 style="justify-content: center;">"Ленивые" разработчики</h3>
                         <p>Зачем писать boilerplate-код? VUCAPP берет на себя рутину по созданию UI и генерации базовой структуры проекта.</p>
                     </div>
-                    <div class="card text-center">
-                        <div style="font-size: 2.5rem; margin-bottom: 16px;">🚀</div>
+                    <div class="card-clickable card text-center" style="align-items: center;">
+                        <div class="emsy">&#xEC4A;</div> 
                         <h3>Быстрое прототипирование</h3>
                         <p>Нужно срочно набросать рабочий инструмент под Windows? Соберите его за пару минут и скомпилируйте в готовый .exe файл.</p>
                     </div>
@@ -82,7 +281,9 @@
                 <h2>Платформы и Возможности</h2>
                 <div class="grid">
                     <div class="card">
-                        <h3>💻 Windows 11 (C# / WinUI 3)</h3>
+                    <div class="ems">&#xE7F8;</div>
+                    <h3>Windows 11 (C# / WinUI 3)</h3>
+
                         <p>Создавайте нативные приложения с современным дизайном Windows (WinUI 3).</p>
                         <ul>
                             <li>Визуальный конструктор дизайна (Drag & Drop интерфейс).</li>
@@ -92,8 +293,9 @@
                             <li>Сборка проекта в один независимый <code>.exe</code> файл в один клик.</li>
                         </ul>
                     </div>
-                    <div class="card">
-                        <h3>❄️ ColdOS (ColdAPP)</h3>
+                    <div class="card" style="display: none;">
+                     <div style="display: flex;"><div class="winui-icon" style="color: var(--accent-color); font-size: 20.5px; margin-right: 10px;">&#xE977;</div>
+                    <h3>ColdOS (ColdAPP)</h3></div>
                         <p>Разработка под нашу будущую операционную систему ColdOS.</p>
                         <ul>
                             <li>Адаптированный визуальный конструктор дизайна.</li>
@@ -109,17 +311,17 @@
             <section id="how-it-works">
                 <h2>Как происходит разработка?</h2>
                 <div class="grid">
-                    <div class="card">
+                    <div class="card-clickable card">
                         <div class="step-number">1</div>
                         <h3>Дизайн</h3>
                         <p>Откройте визуальный редактор. Перетащите нужные элементы на рабочую область. Настройте их размер, цвет и свойства через удобную панель.</p>
                     </div>
-                    <div class="card">
+                    <div class="card-clickable card">
                         <div class="step-number">2</div>
                         <h3>Логика</h3>
                         <p>Выберите элемент и привяжите к нему действие. VUCAPP автоматически сгенерирует нужный метод на C#, а вам останется только дописать нужное действие.</p>
                     </div>
-                    <div class="card">
+                    <div class="card-clickable card">
                         <div class="step-number">3</div>
                         <h3>Компиляция</h3>
                         <p>Нажмите кнопку "Собрать". VUCAPP под капотом использует .NET SDK, чтобы скомпилировать ваш проект и выдать вам готовый, рабочий .exe файл.</p>
@@ -127,12 +329,28 @@
                 </div>
             </section>
 
-            <section id="support">
-                <h2>Бесплатно навсегда</h2>
-                <div class="card text-center" style="align-items: center;">
-                    <p style="max-width: 600px;">VUCAPP — это бесплатный проект, который создается для сообщества разработчиков. Вы можете пользоваться всеми функциями программы абсолютно бесплатно.</p>
+        <section id="extra-features">
+            <h2>Продвинутые инструменты</h2>
+            <div class="grid">
+                <div class="card-clickable card">
+                    <div class="ems">&#xE90F;</div>
+                    <h3>Менеджер пакетов NuGet</h3>
+
+
+                    <p>Встроенный менеджер позволяет устанавливать любые библиотеки из репозитория NuGet. Расширяйте функционал ваших приложений без ограничений.</p>
                 </div>
-            </section>
+                <div class="card-clickable card">
+                    <div class="ems">&#xE71B;</div>
+                    <h3>Привязки using</h3>
+                    <p>Добавляйте необходимые пространства имен в ваш проект с помощью удобного редактора привязок.</p>
+                </div>
+                <div class="card-clickable card">
+                    <div class="ems">&#xE74C;</div>
+                    <h3>Шаблоны проектов</h3>
+                    <p>Начните с готовых шаблонов: "Пустое приложение", "Opix-Браузер", "Задаваемый прогресс-бар", "Текстовый редактор". Экономьте часы на настройке архитектуры.</p>
+                </div>
+            </div>
+        </section>
         </div>
 
         <!-- Вкладка 3: Как установить -->
@@ -141,33 +359,46 @@
                 <h2>Установка и Запуск VUCAPP</h2>
                 
                 <div class="card" style="margin-bottom: 24px;">
-                    <h3>1. Что требуется перед установкой</h3>
+                    <div class="step-number">1</div>
+                    <h3>Системные требования</h3>
                     <ul style="margin-top: 10px;">
-                        <li>Операционная система: <strong>Windows 10 или Windows 11</strong>.</li>
-                        <li>Установленный <strong>.NET SDK</strong> (необходим для компиляции проектов в .exe).</li>
+                    <li>Операционная система: <strong>Windows 11</strong>.</li>
+                    <li>Архитектура: x64 (64-разрядная).</li>
+                    <li>Оперативная память: от 4 GB (рекомендуется 8 GB).</li>
+                    <li>Свободное место на диске: минимум 2 GB.</li>
+                    <li>Установленный <strong>.NET SDK</strong> (необходим для компиляции проектов).</li>
                     </ul>
                 </div>
 
                 <div class="card" style="margin-bottom: 24px;">
-                    <h3>2. Как скачать</h3>
+                    <div class="step-number">2</div>
+                    <h3>Скачивание VentraUniverseCreateAPP</h3>
                     <p>Скачайте последнюю версию программы в виде ZIP-архива по прямой ссылке:</p>
-                    <div style="margin-top: 16px;">
-                        <button onclick="openURL('https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip')" target="_blank" class="btn btn-primary">Скачать VUCAPP.zip</a>
+                    <div style="margin-top: 16px; display: flex; gap: 8px;">
+                        <button onclick="openURL('https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip')" target="_blank" class="btn btn-primary">Скачать VUCAPP.zip</button>
+                        <button onclick="openURL('https://github.com/VentraKat/VUCAPP/releases/')" target="_blank" class="btn">Другие версии</button>
                     </div>
                 </div>
 
                 <div class="card">
-                    <h3>3. Инструкция по установке</h3>
+                    <div class="step-number">3</div>
+                    <h3>Инструкция по установке</h3>
                     <div class="code-block">
-                        1. Распакуйте скачанный архив VUCAPP.zip.<br>
-                        2. Убедитесь, что у вас установлен .NET SDK. Если его нет, запустите установщик из папки <code>fixes</code>.<br>
-                        3. Запустите приложение Install_VUCAPP.exe, нажмите установить, появится окно !НЕ ЗАКРЫВАТЬ!, после успешной установки, потребуется закрыть, нажмите.<br>
-                        4. <strong>Если вылезают ошибки о проблем с NuGet пакетов:</strong> удалите файлы .nupkg по пути <code>C:\vucapp\nugets\</code>, запустите файл <code>C:\vucapp\nugets\InstallNugets.bat</code>. В консоли выберите выбранные пакеты из списка через пробел. После введите требуемую версию из консоли и нажмите Enter.<br>
-                        5. Запустите <code>C:\vucapp\launcher.exe</code>. После запуска брандмауэр может запросить сетевой доступ — обязательно подтвердите, нажав "ДА".
+                        1. Распакуйте скачанный архив <strong>VUCAPP.zip</strong>.<br>
+                        2. Убедитесь, что у вас установлен <strong>.NET SDK</strong>. Если его нет, откройте установщик из папки <strong>fixes</strong>.<br>
+                        3. Запустите приложение <strong>Install_VUCAPP.exe</strong>, нажмите установить, появится окно <strong>!НЕ ЗАКРЫВАТЬ!</strong>, после успешной установки, потребуется закрыть, нажмите.<br>
+                        4. <strong>Если вылезают ошибки с проблемами NuGet пакетов:</strong> удалите файлы .nupkg по пути <strong>C:\vucapp\nugets\</strong>, запустите файл <strong>C:\vucapp\nugets\InstallNugets.bat</strong>. В консоли выберите выбранные пакеты из списка через пробел. После введите требуемую версию из консоли и нажмите Enter.<br>
+                        5. Запустите <strong>C:\vucapp\launcher.exe</strong>. После запуска брандмауэр может запросить сетевой доступ — обязательно подтвердите, нажав "ДА".
                     </div>
-                    <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;">
-                        <em>* Так как приложение вышла недавно, стабильность пока не гарантирована. Сообщайте проблемы и баги.</em>
+
+
+                    <div style="display: flex; gap: 8px; margin-top: 16px;">
+
+                    <button class="btn btn-primary" onclick="openURL('https://github.com/VentraKat/VUCAPP/issues/new')"  style="width: 180px;">Сообщить о проблеме</button>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; display: flex; width: 700px; margin-left: 8px; user-select: none;">
+                        <em>* Приложение находится в стадии активной разработки. Стабильность работы не гарантирована на 100%. Если вы нашли баг — сообщите о нем в раздел Issues на GitHub.</em>
                     </p>
+                    </div>
                 </div>
             </section>
         </div>
@@ -207,48 +438,90 @@
             <span>Скачать последнюю версию VUCAPP</span>
         </div>
     </div>
-
+<!-- Подключаем современный движок плавной прокрутки -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <!-- Логика и скрипты -->
     <script>
         const versionapp = "1.1";
+
+
+        // Инициализация Lenis
+const lenis = new Lenis({
+    duration: 1.5, // Увеличили длительность для "тягучего" эффекта
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    mouseMultiplier: 1.1, // Чуть-чуть увеличили скорость отклика колеса
+    smoothTouch: false,
+    touchMultiplier: 2,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+// Добавим автоматический скролл наверх при обновлении страницы, 
+// чтобы анимация появления всегда была видна
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+
+// Связываем переключение вкладок с прокруткой Lenis
+// Чтобы при смене вкладки Lenis понимал, где находится верх страницы
+function syncLenis() {
+    lenis.scrollTo(0, { immediate: true });
+}
+
+// Добавьте вызов syncLenis() внутрь вашей функции openTab
+// Пример изменения вашей функции:
+/*
+function openTab(evt, tabId) {
+    ... ваш код ...
+    syncLenis(); // Сброс прокрутки для новой вкладки
+}
+*/
 
 
         function openURL(url) {
 window.open(url, '_blank');
 
         }
-        
-        // --- ЛОГИКА ВКЛАДОК ---
-        function openTab(evt, tabId) {
-            // Скрываем весь контент
-            const tabContents = document.getElementsByClassName("tab-content");
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove("active");
-            }
-            // Убираем класс active у всех кнопок
-            const tabLinks = document.getElementsByClassName("tab-link");
-            for (let i = 0; i < tabLinks.length; i++) {
-                tabLinks[i].classList.remove("active");
-            }
-            // Показываем нужную вкладку
-            document.getElementById(tabId).classList.add("active");
-            
-            // Выделяем активную кнопку
-            if (evt) {
-                evt.currentTarget.classList.add("active");
-            } else {
-                // Если вызвано не кликом напрямую (например кнопка из Hero-блока)
-                const targetBtn = document.querySelector(`button[onclick="openTab(event, '${tabId}')"]`);
-                if(targetBtn) targetBtn.classList.add("active");
-            }
-            
-            // Прокручиваем наверх при смене вкладки
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+function openTab(evt, tabId) {
+    const tabContents = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove("active");
+    }
+    const tabLinks = document.getElementsByClassName("tab-link");
+    for (let i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove("active");
+    }
 
+    const activeTab = document.getElementById(tabId);
+    activeTab.classList.add("active");
+    
+    if (evt) {
+        evt.currentTarget.classList.add("active");
+    } else {
+        const targetBtn = document.querySelector(`button[onclick="openTab(event, '${tabId}')"]`);
+        if(targetBtn) targetBtn.classList.add("active");
+    }
 
-            if (tabId === 'tab-main') { document.title = "VUCAPP - Главная"; } else if (tabId === 'tab-features') { document.title = "VUCAPP - Возможности"; } else if (tabId === 'tab-install') { document.title = "VUCAPP - Как установить"; }  
-        }
+    // Мгновенный скролл наверх через Lenis
+    lenis.scrollTo(0, { immediate: true });
 
+    // Динамическое обновление заголовка
+    const titles = {
+        'tab-main': 'Главная',
+        'tab-features': 'Возможности',
+        'tab-install': 'Установка',
+        'tab-docs': 'Документация',
+        'tab-about': 'О проекте'
+    };
+    document.title = `VUCAPP - ${titles[tabId] || 'Разработка'}`;
+}
         // --- ЛОГИКА ТЕМЫ ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
