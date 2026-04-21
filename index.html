@@ -27,6 +27,7 @@
     --text-color: #1a1a1a;
     --text-secondary: #5c5c5c;
     --accent-color: #0067c0;
+    --sik: #F6F6F6;
     --accent-hover: #005a9e;
     --border-color: rgba(0, 0, 0, 0.1);
     --border-color2: rgba(0, 0, 0, 0.2);
@@ -34,6 +35,14 @@
     --border-radius: 5px;
     --bdft: 1px solid #1473C5;
     --bdftd: 1px solid #003E73;
+    --idb: rgba(255,255,255,0.6);
+    --viad: #FFFFFF;
+    --jdjsjoe0: #1875C5;
+    --cabrr: 1px solid #3183CB;
+    --cab: #3083CB;
+    --crs: #3083CB;
+
+    --bulk:#F6F6F6;
 }
 
 ::selection { 
@@ -52,13 +61,20 @@
     --surface-solid: rgba(255, 255, 255, 0.05);
     --text-color: #ffffff;
     --text-secondary: #cccccc;
-    --accent-color: #4cc2ff;
+    --accent-color: #4CC2FF;
     --accent-hover: #47b1e8;
     --border-color: rgba(255,255,255,0.02);
     --border-color2: rgba(255,255,255,0.02);
     --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     --bdft: 1px solid rgba(255, 255, 255, 0.15);
     --bdftd: 1px solid rgba(0, 0, 0, 0.2);
+    --idb: rgba(0,0,0,0.6);
+    --viad: #000000;
+    --jdjsjoe0: #49B3EA;
+    --cabrr: 1px solid #46A5D6;
+    --crs: #46A5D6;
+    --bulk:#3C3C3C;
+        --sik: rgba(255,255,255,0.05);
 }
 
 /* Общие стили */
@@ -216,36 +232,40 @@ nav {
 }
 
 .btn:hover {
-    background: #F6F6F6;
+    background: var(--bulk);
 }
-    .button:active {
-        border-bottom: 1px solid rgb(229, 229, 229);
+    .btn:active {
+            border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
         color: #616161;
+        background: var(--sik);
     }
 
 .btn-primary {
     background-color: var(--accent-color);
-    color: #ffffff;
+    color: var(--viad);
     border-top: var(--bdft);
     border-right: var(--bdft);
     border-left: var(--bdft);
     border-bottom: var(--bdftd);
 }
 
-[data-theme="dark"] .btn-primary { color: #000000; }
+
 .btn-primary:hover {
-    background: #1875C5;
+    background: var(--jdjsjoe0);
 }
 
 .btn-primary:active {
-        background: #3083CB;
-        color: rgba(255,255,255,0.7);
-        border-top: 1px solid #3083CB;
-        border-right: 1px solid #3083CB;
-        border-left: 1px solid #3083CB;
-        border-bottom: 1px solid #3083CB;
+        background: var(--crs);
+        color: var(--idb);
+            border-top: var(--cabrr);
+    border-right: var(--cabrr);
+    border-left: var(--cabrr);
+    border-bottom:var(--cabrr);
     }
-[data-theme="dark"] .btn-primary:hover { color: #000000; }
+
 
 /* Вкладки: скрытие и плавное появление */
 .tab-content {
