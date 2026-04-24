@@ -3,7 +3,7 @@
   <h1><b>VentraUniverseCreateAPP (VUCAPP)</b></h1>
   <p><i>Новая современная альтернатива <b>PHP Devel Studio</b>. Мощная и простая визуальная среда разработки для новичков.</i></p>
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://github.com/VentraKat/VUCAPP/blob/main/LICENSE)
   [![Release](https://img.shields.io/github/v/release/VentraKat/VUCAPP)](https://github.com/VentraKat/VUCAPP/releases)
   [![WebSite](https://img.shields.io/badge/website-link-green)](https://ventrakat.github.io/VUCAPP/)
 </div>
