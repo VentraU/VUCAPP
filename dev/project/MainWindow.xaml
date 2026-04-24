@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        x:Class="AppGenerated.MainWindow" 
+        Title="VentraUniverseCreateAPP" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+    
+    <Grid>
+        
+        <!-- ================= ОСНОВНОЕ ПРИЛОЖЕНИЕ (Изначально скрыто) ================= -->
+        <Grid x:Name="MainAppUI" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48"/>   
+                <RowDefinition Height="*"/>    
+            </Grid.RowDefinitions>
+            
+            <WebView2 x:Name="MyWebView2" 
+                      Source="http://127.0.0.1:6024/index.html" 
+                      Grid.Row="0"
+                      Grid.RowSpan="2"
+                      Margin="0,0,0,0"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch" 
+                      MinWidth="200"/>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>     
+                    <ColumnDefinition Width="Auto"/>  
+                </Grid.ColumnDefinitions>
+
+                <Border x:Name="AppTitleBar" Background="Transparent" Grid.Column="0" />
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top">
+                    <Button x:Name="MinimizeBtn" Content="&#xE921;" FontFamily="Segoe Fluent Icons" FontSize="10" Width="48" Height="48" Background="Transparent" BorderThickness="0" CornerRadius="0" Click="MinimizeBtn_Click" />
+                    <Button x:Name="MaximizeBtn" Content="&#xE922;" FontFamily="Segoe Fluent Icons" FontSize="10" Width="48" Height="48" Background="Transparent" BorderThickness="0" CornerRadius="0" Click="MaximizeBtn_Click" />
+                    
+                    <Border Width="48" Height="48" Background="Transparent" IsHitTestVisible="False" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <!-- ================= ЗАСТАВКА (Изначально видна) ================= -->
+        <Grid x:Name="SplashUI" Background="Transparent">
+            <!-- Убрано ошибочное свойство OverflowClipMargin -->
+            <Border CornerRadius="8">
+                <WebView2 x:Name="SplashWebView" 
+                          Source="http://localhost:6024/loadingsrc.html" 
+                          HorizontalAlignment="Stretch" 
+                          VerticalAlignment="Stretch" />
+            </Border>
+        </Grid>
+
+    </Grid>
+</Window>
