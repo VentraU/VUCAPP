@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>loading vucapp...</title>
+</head>
+<script>
+    fetch("ide.cfg").then(response => response.text()).then(data => {
+        const darkthemem = data.match(/darktheme=(\w+)/);
+        if(darkthemem && darkthemem[1] === "yes" ) {
+            document.body.style.backgroundImage = "url('assets/loadingscreend.png')";
+        }
+    }).catch(e=>{});
+</script>
+<body>
+    
+</body>
+<style>
+body {
+    background-image: url('assets/loadingscreen.png');
+    background-repeat: no-repeat;
+    background-color: #000;
+}
+
+</style>
+</html>
