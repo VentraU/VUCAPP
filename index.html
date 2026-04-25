@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUCAPP - Главная</title>
+    <!-- Подключение внешнего файла стилей -->
+    <link href="https://github.com/VentraKat/VUCAPP/raw/main/images/Logo.png" rel="icon">
+    <style>
+        /* Базовые переменные (Светлая тема) */
+        @font-face {
+    font-family: "cfu";
+    src: url("./images/SegoeIcons.ttf");
+}
+
+        @font-face {
+    font-family: "cu";
+    src: url("./images/segoeui.ttf");
+}
+        @font-face {
+    font-family: "seguisb";
+    src: url("./images/seguisb.ttf");
+}
+
+
+
+
+        
+:root {
+    --bg-color: #f3f3f3;
+    --surface-color: rgba(255, 255, 255, 0.5);
+    --surface-solid: #ffffff;
+    --text-color: #1a1a1a;
+    --text-secondary: #5c5c5c;
+    --accent-color: #845437;
+    --sik: #F6F6F6;
+    --accent-hover: #4F3221;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --border-color2: rgba(0, 0, 0, 0.2);
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --border-radius: 5px;
+    --bdft: 1px solid #8E6147;
+    --bdftd: 1px solid #4F3221;
+    --idb: rgba(255,255,255,0.6);
+    --viad: #FFFFFF;
+    --jdjsjoe0: #8F644A;
+    --cabrr: 1px solid #9A745E;
+    --cab: #9A745E;
+    --crs: #9A745E;
+
+    --bulk:#F6F6F6;
+}
+
+::selection { 
+    background: var(--accent-color);
+    color: #FFF;
+}
+
+[data-theme="dark"] ::selection {
+    color: #000000;
+}
+
+/* Темная тема */
+[data-theme="dark"] {
+    --bg-color: #202020;
+    --surface-color: rgba(43, 43, 43, 0.6);
+    --surface-solid: rgba(255, 255, 255, 0.05);
+    --text-color: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-color: #D6BA91;
+    --accent-hover: #B9A07D;
+    --border-color: rgba(255,255,255,0.02);
+    --border-color2: rgba(255,255,255,0.02);
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --bdft: 1px solid #D9BF9A;
+    --bdftd: 1px solid #B9A07D;
+    --idb: rgba(0,0,0,0.6);
+    --viad: #000000;
+    --jdjsjoe0: #C5AC87;
+    --cabrr: 1px solid #B59E7E;
+    --crs: #B59E7E;
+    --bulk:#3C3C3C;
+        --sik: rgba(255,255,255,0.05);
+}
+
+/* Общие стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: cu;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+/* Эффект Mica для фона (имитация) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at top left, var(--accent-color) 0%, transparent 40%),
+                radial-gradient(circle at bottom right, var(--accent-color) 0%, transparent 40%);
+    opacity: 0.05;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Верхняя панель */
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    background-color: var(--surface-color);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.logo:hover {
+
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.logo:active {
+
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+[data-theme="dark"] .logo:hover {
+
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .logo:active {
+
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-logo-img {
+    height: 28px;
+    width: auto;
+
+     user-select: none; pointer-events: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    margin-right: 10px;
+}
+
+/* Стили кнопок вкладок */
+.nav-links button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 16px;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.2s, color 0.2s;
+    padding: 5px 0;
+}
+
+.nav-links button:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.nav-links button.active {
+    opacity: 1;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Кнопки в стиле Windows 11 */
+.btn {
+    height: 32px;
+
+
+
+    background: var(--surface-solid);
+    color: var(--text-color);
+    outline: none;
+    border-radius: 5px;
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color2);
+    user-select: none;
+    font-size: 14px;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-top: -1px;
+    padding-bottom: 1px;
+}
+
+.btn:hover {
+    background: var(--bulk);
+}
+    .btn:active {
+            border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        color: #616161;
+        background: var(--sik);
+    }
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--viad);
+    border-top: var(--bdft);
+    border-right: var(--bdft);
+    border-left: var(--bdft);
+    border-bottom: var(--bdftd);
+}
+
+
+.btn-primary:hover {
+    background: var(--jdjsjoe0);
+}
+
+.btn-primary:active {
+        background: var(--crs);
+        color: var(--idb);
+            border-top: var(--cabrr);
+    border-right: var(--cabrr);
+    border-left: var(--cabrr);
+    border-bottom:var(--cabrr);
+    }
+
+
+/* Вкладки: скрытие и плавное появление */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Основной контент */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    width: 100%;
+}
+
+header.hero {
+    text-align: center;
+    margin-bottom: 125px;
+    padding-top: 125px;
+}
+
+.hero-logo {
+    height: 160px;
+    width: 160px;
+    margin: 0 auto 24px auto;
+    display: block;
+    background-image: url('https://github.com/VentraKat/VUCAPP/raw/main/images/Logo.png');
+    background-size: 160px 160px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 60px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.9);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .hero-logo {
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+}
+
+h1 {
+    font-size: 3rem;
+        font-weight: inherit;
+    font-family: seguisb;
+
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+/* Секции и карточки */
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 28px;
+        font-weight: inherit;
+    font-family: seguisb;
+
+    text-align: center;
+}
+
+.text-center { text-align: center; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 32px;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+
+        font-weight: inherit;
+    font-family: seguisb;
+
+}
+
+.card p {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.card strong{
+    font-weight: inherit;
+    font-family: seguisb;
+
+}
+
+.card p:last-child { margin-bottom: 0; }
+
+ul { list-style: none; }
+ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+}
+
+ul li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 20px;
+    top: -2px;
+}
+
+.code-block {
+    background-color: var(--surface-solid);
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    overflow-x: auto;
+    line-height: 1.8;
+}
+
+.status-badge {
+    display: inline-block;
+    background-color: rgba(34, 177, 76, 0.2);
+    color: #005000;
+    padding: 6px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+        font-weight: inherit;
+    font-family: seguisb;
+    user-select: none;
+
+    margin-bottom: 24px;
+}
+
+[data-theme="dark"] .status-badge { color: rgb(255,255,255); }
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    border-top: var(--bdft);
+    border-right: var(--bdft);
+    border-left: var(--bdft);
+    border-bottom: var(--bdftd);
+    user-select: none;
+    cursor: default;
+}
+
+
+
+
+.step-number:hover {
+    background: var(--jdjsjoe0);
+}
+
+.step-number:active {
+        background: var(--crs);
+        color: var(--idb);
+            border-top: var(--cabrr);
+    border-right: var(--cabrr);
+    border-left: var(--cabrr);
+    border-bottom:var(--cabrr);
+    }
+
+
+.ems {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    border-top: var(--bdft);
+    border-right: var(--bdft);
+    border-left: var(--bdft);
+    border-bottom: var(--bdftd);
+    user-select: none;
+    cursor: default;
+font-family: cfu;
+    padding-top: 2px;
+}
+
+
+
+.ems:hover {
+    background: var(--jdjsjoe0);
+}
+
+.ems:active {
+        background: var(--crs);
+        color: var(--idb);
+            border-top: var(--cabrr);
+    border-right: var(--cabrr);
+    border-left: var(--cabrr);
+    border-bottom:var(--cabrr);
+    }
+
+[data-theme="dark"] .ems { color: black; }
+
+
+
+
+.emsy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    color: var(--accent-color);
+    border-radius: 5px;
+    margin-bottom: 16px;
+    user-select: none;
+    cursor: default;
+    font-size: 40px;
+font-family: cfu;
+    padding-top: 0px;
+    text-align: center;
+
+        font-weight: inherit;
+
+}
+
+
+
+
+[data-theme="dark"] .step-number { color: black; }
+
+footer {
+    text-align: center;
+    padding: 32px 24px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+    background-color: var(--surface-color);
+}
+
+#theme-toggle { padding: 6px 10px; font-size: 1.1rem; }
+
+/* WINDOWS 11 CONTEXT MENU STYLES */
+@font-face {
+    font-family: cfu;
+    src: local('Segoe Fluent Icons');
+}
+
+.context-menu {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    width: 340px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    padding: 4px;
+    font-family: cu;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .context-menu {
+    background-color: rgba(32, 32, 32, 0.7);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.context-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    user-select: none;
+    gap: 12px;
+}
+
+.context-menu-item:hover { background-color: rgba(0, 0, 0, 0.05); }
+[data-theme="dark"] .context-menu-item:hover { background-color: rgba(255, 255, 255, 0.08); }
+
+
+.context-menu-item:active { background-color: rgba(0, 0, 0, 0.08); }
+[data-theme="dark"] .context-menu-item:active { background-color: rgba(255, 255, 255, 0.1); }
+
+.context-menu-separator {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 4px 0;
+}
+
+.fluent-icon {
+    font-family: cfu;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    font-weight: normal;
+    display: inline-block;
+}
+
+.winui-icon {
+    font-family: cfu;
+}
+
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    h1 { font-size: 2.2rem; }
+    .hero-buttons { flex-direction: column; }
+}
+
+
+/* Дополнительные улучшения для скролла */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--surface-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover);
+}
+
+
+/* --- АНИМАЦИИ ПРИ ЗАГРУЗКЕ --- */
+
+/* Базовый класс для элементов, которые должны появиться */
+.hero > *, 
+#about .card,
+.grid > .card,
+section h2 {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    filter: blur(10px);
+    animation: winEntrance 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Эффект последовательного появления (Stagger) */
+.hero-logo { animation-delay: 0.1s; }
+.hero h1 { animation-delay: 0.2s; }
+.hero .subtitle { animation-delay: 0.3s; }
+.hero-buttons { animation-delay: 0.4s; }
+
+/* Анимация для секции "Почему выбирают VUCAPP" */
+#tab-main section:nth-child(2) h2 { animation-delay: 0.5s; }
+#tab-main .grid .card:nth-child(1) { animation-delay: 0.6s; }
+#tab-main .grid .card:nth-child(2) { animation-delay: 0.7s; }
+#tab-main .grid .card:nth-child(3) { animation-delay: 0.8s; }
+
+/* Ключевые кадры в стиле Windows 11 */
+@keyframes winEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+        filter: blur(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Обновление существующей анимации вкладок на более глубокую */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+        filter: blur(5px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+        filter: blur(0);
+    }
+}
+
+/* Плавное появление навигации */
+nav {
+    animation: navSlideDown 1s ease-in-out;
+}
+
+@keyframes navSlideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+
+.card-clickable {
+user-select: none;
+
+}
+.card-clickable:hover {
+opacity: 0.9 !important;
+}
+.card-clickable:active {
+opacity: 0.6 !important;
+}
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <div class="logo" style="cursor: pointer;" onclick="openTab(event, 'tab-main'); document.getElementById('homelsad').className = 'tab-link active'">
+                <img src="https://github.com/VentraKat/VUCAPP/raw/main/images/Logo.png" alt="VUCAPP Logo" class="nav-logo-img">
+                <div style="font-family: seguisb; user-select: none; pointer-events: none;">VUCAPP</div>
+            </div>
+            <!-- Навигация по вкладкам -->
+
+        </div>
+        <div class="nav-right">
+                        <div class="nav-links">
+                <button class="tab-link active" id="homelsad" onclick="openTab(event, 'tab-main')">Главная</button>
+                <button class="tab-link" id="pedd" onclick="openTab(event, 'tab-features')">Возможности</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-docs')">Документация</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-about')">О проекте</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-install')">Установка</button>
+            </div>
+            <button id="theme-toggle" class="btn fluent-icon"  aria-label="Переключить тему" style="height: 32px; width: 42px; font-size: 16px;">&#xE708;</button>
+            <button class="btn btn-primary" onclick="openURL('https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip')" style="height: 32px; display: flex; line-height: 32px;"><div style="font-family: cfu; font-size: 15px;">&#xE896;</div><div style="margin-left: 8px;">Скачать</div></button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Вкладка 1: Главная (только самое основное) -->
+        <div id="tab-main" class="tab-content active">
+            <header class="hero">
+                <!-- <div class="status-badge">🎉 Приложение официально вышла</div> -->
+                <div class="hero-logo"></div>
+                <h1>VentraUniverseCreateAPP</h1>
+                <p class="subtitle">Новая современная альтернатива PHP Devel Studio. Мощная и простая визуальная среда разработки для ленивых разработчиков и новичков.</p>
+                <div class="hero-buttons" style="margin-bottom: 8px;">
+                    <button onclick="openURL('https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip')" class="btn btn-primary" style="height: 32px; display: flex; line-height: 32px;"><div style="font-family: cfu; font-size: 15px;">&#xE896;</div><div style="margin-left: 8px;">Скачать VUCAPP</div></button>
+                    <button class="btn" onclick="openTab(event, 'tab-features'); document.getElementById('pedd').classList.add('active')">Изучить возможности</button>
+                </div>
+                <div class="hero-buttons">
+                    <button onclick="openURL('https://github.com/VentraKat/VUCAPP')" class="btn">Просмотреть на GitHub</button>
+                </div>
+            </header>
+
+            <section id="about">
+                <h2>Что такое VUCAPP?</h2>
+                
+                <div class="card">
+                    <p><strong>VUCAPP (VentraUniverseCreateAPP)</strong> — это инновационная среда разработки приложений (IDE) с полноценным визуальным интерфейсом. Мы написали саму программу на современных веб-технологиях (HTML, JS), чтобы сделать её легкой и быстрой.</p>
+                    <p>Наша главная миссия — вернуть магию старых добрых <strong>Delphi</strong> и <strong>Visual Basic IDE</strong>, а также стать достойной бесплатной заменой устаревшему <strong>DevelStudio</strong>. Мы хотим, чтобы создание программ было доступным, интуитивно понятным и не требовало написания тысяч строк кода для базовых вещей.</p>
+                </div>
+            </section>
+
+            
+        <section>
+            <h2>Почему выбирают VUCAPP?</h2>
+            <div class="grid">
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xE945;</div>
+                    <h3 style="justify-content: center;">Молниеносный старт</h3>
+                    <p>Не нужно настраивать компиляторы и SDK вручную. Установил, запустил, начал собирать интерфейс.</p>
+                </div>
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xEDA4;</div>
+                    <h3 style="justify-content: center;">Визуальное программирование</h3>
+                    <p>Drag-and-drop конструктор. Создавайте сложные интерфейсы за минуты, не отвлекаясь на рутину верстки.</p>
+                </div>
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xE946;</div>
+                    <h3 style="justify-content: center;">Абсолютно бесплатно</h3>
+                    <p>Никаких подписок, PRO-версий и ограничений. Полный доступ ко всем функциям навсегда.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Технологии под капотом</h2>
+            <div class="grid">
+                <div class="card-clickable card">
+                    <div class="ems">&#xE7B8;</div>
+                    <h3>Генерация C# кода</h3>
+                    <p>VUCAPP генерирует чистый, читаемый код на C# с использованием современных паттернов. Вы получаете не просто исполняемый файл, а готовый проект для Visual Studio, который можно дорабатывать вручную.</p>
+                </div>
+                <div class="card-clickable card">
+                    <div class="ems">&#xE790;</div>
+                    <h3>WinUI 3</h3>
+                    <p>Все создаваемые приложения используют нативные элементы управления Windows 11. Ваши программы выглядят как часть операционной системы, с поддержкой Mica, Acrylic и темной темы.</p>
+                </div>
+            </div>
+        </section>
+        </div>
+
+
+                <div id="tab-about" class="tab-content">
+<header class="hero">
+            <h1>О проекте VUCAPP</h1>
+            <p class="subtitle">История создания, миссия и команда разработчиков.</p>
+        </header>
+
+        <section>
+            <div class="card text-center" style="align-items: center;">
+                <button onclick="openURL('https://github.com/VentraKat/VUCAPP/tree/vucapp_structure')" class="btn btn-primary" style="margin-bottom: 16px; height: 32px; display: flex; line-height: 32px;"><div style="font-family: cfu; font-size: 15px;">&#xE82F;</div><div style="margin-left: 8px;">Исходно-открытый код</div></button>
+                <p style="max-width: 800px;">VUCAPP (VentraUniverseCreateAPP) родился как ответ на растущую сложность современных инструментов разработки. Мы хотели создать среду, которая была бы одновременно мощной и интуитивно понятной, как старые добрые Delphi или Visual Basic, но использующую современные технологии Windows 11.</p>
+                <p style="margin-top: 20px;">Код проекта полностью открыт и доступен на GitHub. Любой желающий может внести свой вклад в развитие, сообщить об ошибке или предложить новую функцию.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Команда разработчиков</h2>
+            <div class="grid">
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xE77B;</div>
+                    <h3 style="justify-content: center;">VentraKat</h3>
+                    <p>Основатель, архитектор и ведущий разработчик. Идея создания VUCAPP пришла в 2023 году после разочарования в устаревших IDE. Но всё таки вышла официально через 3 года :3</p>
+                </div>
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xE790;</div>
+                    <h3 style="justify-content: center;">а...</h3>
+                    <p>кушать тапок</p>
+                </div>
+                <div class="card-clickable card text-center" style="align-items: center;">
+                    <div style="margin-bottom: 16px;" class="emsy">&#xE909;</div>
+                    <h3 style="justify-content: center;">Бета-тестеры</h3>
+                    <p>Отдельное спасибо всем, кто сообщал об ошибках и помогал отлаживать стабильность на разных конфигурациях ПК.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Лицензия и использование</h2>
+            <div class="card">
+                    <div class="ems">&#xF000;</div>
+                    <h3>Лицензия MIT</h3>
+                <p>VUCAPP распространяется под лицензией MIT. Это означает, что вы можете:</p>
+                <ul>
+                    <li>Использовать программу в коммерческих и личных целях абсолютно бесплатно.</li>
+                    <li>Модифицировать исходный код и создавать свои форки.</li>
+                    <li>Распространять копии программы.</li>
+                </ul>
+                <p style="margin-top: 16px;">Единственное условие — сохранение уведомления об авторских правах и текста лицензии при распространении.</p>
+                <div class="code-block" style="margin-top: 20px;">
+Copyright (c) 2026 VentraKat
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Поддержать проект</h2>
+            <div class="card text-center">
+                <p>Если VUCAPP помог вам в работе или учебе, вы можете поддержать проект звездой на GitHub или рассказать о нем друзьям. Это лучший способ сказать "спасибо"!</p>
+                <div style="margin-top: 24px;">
+                    <button onclick="openURL('https://github.com/VentraKat/VUCAPP/')" class="btn btn-primary">Поставить звезду на GitHub</button>
+                </div>
+            </div>
+        </section>
+
+                </div>
+
+        <div id="tab-docs" class="tab-content">
+<header class="hero" style="margin-bottom: 20px;">
+            <h1>Руководство пользователя</h1>
+            <p class="subtitle">Всё, что нужно знать для создания первого приложения в VUCAPP.</p>
+        </header>
+
+        <section>
+            <div class="card">
+                    <div class="ems">&#xE838;</div>
+                    <h3>Структура проекта</h3>
+
+                
+                <p>После создания проекта в VUCAPP вы увидите следующую структуру папок:</p>
+                <div class="code-block">
+                    MyApp/<br>
+                    ├── compilefiles/       # Файлы сборки  (.xaml и код C#)<br>
+                    ├── build/              # Папка компиляции<br>
+                    ├── testrun/            # Папка для теста запуска<br>
+                    ├── userdata/           # Папка для хранений данных для компиляций<br>
+                    ├── app.dat             # Глобальные переменные<br>
+                    ├── [compiletest.bat]   # Скрипт для запуска компляции, не запускать вручную (тест)<br>
+                    ├── [compile.bat]       # Скрипт для запуска компляции, не запускать вручную<br>
+                    ├── events.cfg          # Точки данных секторов<br>
+                    ├── info.txt            # Информация о приложении<br>
+                    ├── project.json        # Кофигурация проекта<br>
+                    └── settings.cfg        # Параметры точки данных
+                </div>
+                <p>Вы можете редактировать файлы в визуальном редакторе.</p>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                    <div class="ems">&#xE8B0;</div>
+                    <h3>Работа с визуальным редактором</h3>
+                <ul>
+                    <li><strong>Панель элементов (Toolbox):</strong> Слева находятся все доступные компоненты. Перетащите Button, TextBox или CheckBox на форму.</li>
+                    <li><strong>Окно свойств (Properties):</strong> Справа вы можете изменить текст кнопки, цвет фона, шрифт, имя переменной...</li>
+                    <li><strong>Управление внешними файлами:</strong> Показывает все добавленные файлы вашего проекта.</li>
+                    <li><strong>Привязка событий:</strong> Во вкладке "События" выберите, например, "Клик" для кнопки. VUCAPP автоматически создаст метод в коде и откроет его для редактирования.</li>
+                </ul>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                    <div class="ems">&#xE713;</div>
+                    <h3>Компиляция и запуск</h3>
+                <p>Для сборки проекта используйте кнопку ▶️. VUCAPP выполнит следующие действия:</p>
+                <div class="code-block">
+                    1. Валидация XAML разметки на ошибки.<br>
+                    2. Генерация полного C# кода из визуального представления.<br>
+                    3. Вызов MSBuild (через .NET SDK) для компиляции проекта.<br>
+                    4. Копирование готового .exe файла в папку "testrun" вашего проекта.<br>
+                    5. Автоматический запуск приложения для тестирования.
+                </div>
+                <p>Если компиляция не удалась, вы увидите окно с ошибками, где можно найти строку с ошибкой для исправления.</p>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                    <div class="ems">&#xE82F;</div>
+                    <h3>Советы по эффективной работе</h3>
+                <ul>
+                    <li>Используйте <strong>User Controls</strong> для переиспользования сложных элементов интерфейса.</li>
+                    <li>Все созданные проекты по умолчанию сохраняются в <code>C:\vucapp\projects\</code>. Рекомендуем делать резервные копии.</li>
+                </ul>
+            </div>
+        </section>
+        </div>
+
+        <!-- Вкладка 2: Возможности -->
+        <div id="tab-features" class="tab-content">
+            <section id="audience">
+
+                        <header class="hero" style="margin-bottom: 30px;">
+            <h1>Всё для продуктивной разработки</h1>
+            <p class="subtitle">VUCAPP объединяет мощь визуального дизайна и гибкость чистого кода.</p>
+        </header>
+
+
+                <h2>Для кого мы создали VUCAPP?</h2>
+                <div class="grid">
+                    <div class="card-clickable card text-center" style="align-items: center;">
+                        <div class="emsy">&#xE7BE;</div>
+                        <h3 style="justify-content: center;">Новички в IT</h3>
+                        <p>Идеальный старт для тех, кто только делает первые шаги в программировании. Собирайте интерфейс мышкой и изучайте логику постепенно.</p>
+                    </div>
+                    <div class="card-clickable card text-center" style="align-items: center;">
+                        <div class="emsy">&#xE945;</div>
+                        <h3 style="justify-content: center;">"Ленивые" разработчики</h3>
+                        <p>Зачем писать boilerplate-код? VUCAPP берет на себя рутину по созданию UI и генерации базовой структуры проекта.</p>
+                    </div>
+                    <div class="card-clickable card text-center" style="align-items: center;">
+                        <div class="emsy">&#xEC4A;</div> 
+                        <h3>Быстрое прототипирование</h3>
+                        <p>Нужно срочно набросать рабочий инструмент под Windows? Соберите его за пару минут и скомпилируйте в готовый .exe файл.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features">
+                <h2>Платформы и Возможности</h2>
+                <div class="grid">
+                    <div class="card">
+                    <div class="ems">&#xE7F8;</div>
+                    <h3>Windows 11 (C# / WinUI 3)</h3>
+
+                        <p>Создавайте нативные приложения с современным дизайном Windows (WinUI 3).</p>
+                        <ul>
+                            <li>Визуальный конструктор дизайна (Drag & Drop интерфейс).</li>
+                            <li>Богатый набор компонентов: кнопки, чекбоксы, поля ввода, списки.</li>
+                            <li><strong>Автоматическая генерация</strong> чистого исходного кода C#.</li>
+                            <li>Удобное подключение вашей логики к событиям компонентов.</li>
+                            <li>Сборка проекта в один независимый <code>.exe</code> файл в один клик.</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="display: none;">
+                     <div style="display: flex;"><div class="winui-icon" style="color: var(--accent-color); font-size: 20.5px; margin-right: 10px;">&#xE977;</div>
+                    <h3>ColdOS (ColdAPP)</h3></div>
+                        <p>Разработка под нашу будущую операционную систему ColdOS.</p>
+                        <ul>
+                            <li>Адаптированный визуальный конструктор дизайна.</li>
+                            <li>Авто-генерация кода в строгой директной структуре.</li>
+                            <li>Использование JavaScript для написания логики компонентов.</li>
+                            <li>Собственный формат компиляции проектов <code>.coldapp</code>.</li>
+                            <li><em>Примечание: Поддержка ColdOS на данный момент отложена.</em></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="how-it-works">
+                <h2>Как происходит разработка?</h2>
+                <div class="grid">
+                    <div class="card-clickable card">
+                        <div class="step-number">1</div>
+                        <h3>Дизайн</h3>
+                        <p>Откройте визуальный редактор. Перетащите нужные элементы на рабочую область. Настройте их размер, цвет и свойства через удобную панель.</p>
+                    </div>
+                    <div class="card-clickable card">
+                        <div class="step-number">2</div>
+                        <h3>Логика</h3>
+                        <p>Выберите элемент и привяжите к нему действие. VUCAPP автоматически сгенерирует нужный метод на C#, а вам останется только дописать нужное действие.</p>
+                    </div>
+                    <div class="card-clickable card">
+                        <div class="step-number">3</div>
+                        <h3>Компиляция</h3>
+                        <p>Нажмите кнопку "Собрать". VUCAPP под капотом использует .NET SDK, чтобы скомпилировать ваш проект и выдать вам готовый, рабочий .exe файл.</p>
+                    </div>
+                </div>
+            </section>
+
+        <section id="extra-features">
+            <h2>Продвинутые инструменты</h2>
+            <div class="grid">
+                <div class="card-clickable card">
+                    <div class="ems">&#xE90F;</div>
+                    <h3>Менеджер пакетов NuGet</h3>
+
+
+                    <p>Встроенный менеджер позволяет устанавливать любые библиотеки из репозитория NuGet. Расширяйте функционал ваших приложений без ограничений.</p>
+                </div>
+                <div class="card-clickable card">
+                    <div class="ems">&#xE71B;</div>
+                    <h3>Привязки using</h3>
+                    <p>Добавляйте необходимые пространства имен в ваш проект с помощью удобного редактора привязок.</p>
+                </div>
+                <div class="card-clickable card">
+                    <div class="ems">&#xE74C;</div>
+                    <h3>Шаблоны проектов</h3>
+                    <p>Начните с готовых шаблонов: "Пустое приложение", "Opix-Браузер", "Задаваемый прогресс-бар", "Текстовый редактор". Экономьте часы на настройке архитектуры.</p>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <!-- Вкладка 3: Как установить -->
+        <div id="tab-install" class="tab-content">
+            <section id="how-to">
+                <h2>Установка и Запуск VUCAPP</h2>
+                
+                <div class="card" style="margin-bottom: 24px;">
+                    <div class="step-number">1</div>
+                    <h3>Системные требования</h3>
+                    <ul style="margin-top: 10px;">
+                    <li>Операционная система: <strong>Windows 11</strong>.</li>
+                    <li>Архитектура: x64 (64-разрядная).</li>
+                    <li>Оперативная память: от 4 GB (рекомендуется 8 GB).</li>
+                    <li>Свободное место на диске: минимум 2 GB.</li>
+                    <li>Установленный <strong>.NET SDK</strong> (необходим для компиляции проектов).</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="margin-bottom: 24px;">
+                    <div class="step-number">2</div>
+                    <h3>Скачивание VentraUniverseCreateAPP</h3>
+                    <p>Скачайте последнюю версию программы в виде ZIP-архива по прямой ссылке:</p>
+                    <div style="margin-top: 16px; display: flex; gap: 8px;">
+                        <button onclick="openURL('https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip')" class="btn btn-primary" style="margin-bottom: 16px; height: 32px; display: flex; line-height: 32px;"><div style="font-family: cfu; font-size: 15px;">&#xE896;</div><div style="margin-left: 8px;">Скачать VUCAPP.zip</div></button>
+                        <button onclick="openURL('https://github.com/VentraKat/VUCAPP/releases/')" target="_blank" class="btn">Другие версии</button>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-bottom: 24px;">
+                    <div class="step-number">3</div>
+                    <h3>Подготовка перед установкой</h3>
+                    <div class="code-block">
+                        1. Проверьте наличий обновлений <strong>Windows</strong>.<br>
+                        2. Проверьте наличий обновлений <strong>Microsoft Edge</strong>.<br>
+                        3. Проверьте наличий обновления из <strong>Microsoft Store</strong>.
+                    </div>
+                </div>
+
+
+                                <div class="card" style="margin-bottom: 24px;">
+                    <div class="step-number">4</div>
+                    <h3>Инструкция по установке</h3>
+                    <div class="code-block">
+                        1. Распакуйте скачанный архив <strong>VUCAPP.zip</strong>.<br>
+                        2. Убедитесь, что у вас установлен <strong>.NET SDK</strong>. Если его нет, откройте установщик из папки <strong>fixes</strong>.<br>
+                        3. Запустите приложение <strong>Install_VUCAPP.exe</strong>, нажмите установить, появится окно <strong>!НЕ ЗАКРЫВАТЬ!</strong>, после успешной установки, потребуется закрыть, нажмите.<br>
+                        4. Запустите <strong>C:\vucapp\launcher.exe</strong>. После запуска брандмауэр может запросить сетевой доступ — обязательно подтвердите, нажав "ДА".
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="step-number">5</div>
+                    <h3>Установка Nuget пакетов</h3>
+                    <div class="code-block">
+                        1. Запустите файл <strong>C:\vucapp\nugets\InstallNugets.bat</strong>.<br>
+                        2. Подождите некоторое время...<br>
+                        3. После завершение процесса, нажмите Enter.<br>
+                    </div>
+
+
+                    <div style="display: flex; gap: 8px; margin-top: 16px;">
+
+                    <button class="btn btn-primary" onclick="openURL('https://github.com/VentraKat/VUCAPP/issues/new')"  style="width: 180px;">Сообщить о проблеме</button>
+
+
+                    
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; display: flex; width: 700px; margin-left: 8px; user-select: none;">
+                        <em>* Приложение находится в стадии активной разработки. Стабильность работы не гарантирована на 100%. Если вы нашли баг — сообщите о нем в раздел Issues на GitHub.</em>
+                    </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 VentraUniverseCreateAPP. Создано с ❤️ для сообщества разработчиков.</p>
+        <p style="margin-top: 8px; opacity: 0.7;">Бесплатная и современная альтернатива DevelStudio.</p>
+    </footer>
+
+    <!-- Контекстное меню Windows 11 -->
+    <div id="win11-context-menu" class="context-menu">
+        <div class="context-menu-item" onclick="window.history.back()">
+            <span class="fluent-icon">&#xE72B;</span>
+            <span>Назад</span>
+        </div>
+        <div class="context-menu-item" onclick="window.history.forward()">
+            <span class="fluent-icon">&#xE72A;</span>
+            <span>Вперед</span>
+        </div>
+        <div class="context-menu-item" onclick="location.reload()">
+            <span class="fluent-icon">&#xE72C;</span>
+            <span>Обновить</span>
+        </div>
+        <div class="context-menu-separator"></div>
+        <div class="context-menu-item" onclick="navigator.clipboard.writeText(window.getSelection().toString())">
+            <span class="fluent-icon">&#xE8C8;</span>
+            <span>Копировать</span>
+        </div>
+        <div class="context-menu-item" onclick="document.getElementById('theme-toggle').click()">
+            <span class="fluent-icon">&#xE793;</span>
+            <span>Переключить тему</span>
+        </div>
+        <div class="context-menu-separator"></div>
+        <div class="context-menu-item" onclick="window.open('https://github.com/VentraKat/VUCAPP/releases/latest/download/VUCAPP.zip', '_blank')">
+            <span class="fluent-icon" style="color: var(--accent-color);">&#xE896;</span>
+            <span>Скачать последнюю версию VUCAPP</span>
+        </div>
+    </div>
+<!-- Подключаем современный движок плавной прокрутки -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <!-- Логика и скрипты -->
+    <script>
+        const versionapp = "1.1";
+
+
+        // Инициализация Lenis
+const lenis = new Lenis({
+    duration: 1.5, // Увеличили длительность для "тягучего" эффекта
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    mouseMultiplier: 1.1, // Чуть-чуть увеличили скорость отклика колеса
+    smoothTouch: false,
+    touchMultiplier: 2,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+// Добавим автоматический скролл наверх при обновлении страницы, 
+// чтобы анимация появления всегда была видна
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+
+// Связываем переключение вкладок с прокруткой Lenis
+// Чтобы при смене вкладки Lenis понимал, где находится верх страницы
+function syncLenis() {
+    lenis.scrollTo(0, { immediate: true });
+}
+
+// Добавьте вызов syncLenis() внутрь вашей функции openTab
+// Пример изменения вашей функции:
+/*
+function openTab(evt, tabId) {
+    ... ваш код ...
+    syncLenis(); // Сброс прокрутки для новой вкладки
+}
+*/
+
+
+        function openURL(url) {
+window.open(url, '_blank');
+
+        }
+function openTab(evt, tabId) {
+    const tabContents = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove("active");
+    }
+    const tabLinks = document.getElementsByClassName("tab-link");
+    for (let i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove("active");
+    }
+
+    const activeTab = document.getElementById(tabId);
+    activeTab.classList.add("active");
+    
+    if (evt) {
+        evt.currentTarget.classList.add("active");
+    } else {
+        const targetBtn = document.querySelector(`button[onclick="openTab(event, '${tabId}')"]`);
+        if(targetBtn) targetBtn.classList.add("active");
+    }
+
+    // Мгновенный скролл наверх через Lenis
+    lenis.scrollTo(0, { immediate: true });
+
+    // Динамическое обновление заголовка
+    const titles = {
+        'tab-main': 'Главная',
+        'tab-features': 'Возможности',
+        'tab-install': 'Установка',
+        'tab-docs': 'Документация',
+        'tab-about': 'О проекте'
+    };
+    document.title = `VUCAPP - ${titles[tabId] || 'Разработка'}`;
+}
+        // --- ЛОГИКА ТЕМЫ ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const savedTheme = localStorage.getItem('vucapp-theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateButtonIcon(savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            htmlElement.setAttribute('data-theme', 'dark');
+            updateButtonIcon('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('vucapp-theme', newTheme);
+            updateButtonIcon(newTheme);
+        });
+
+        function updateButtonIcon(theme) {
+            themeToggleBtn.textContent = theme === 'light' ? '' : '';
+        }
+
+        // --- ЛОГИКА КОНТЕКСТНОГО МЕНЮ ---
+        const contextMenu = document.getElementById('win11-context-menu');
+
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault(); 
+            contextMenu.style.display = 'block';
+            let x = e.clientX;
+            let y = e.clientY;
+            
+            if (x + contextMenu.offsetWidth > window.innerWidth) {
+                x = window.innerWidth - contextMenu.offsetWidth - 5;
+            }
+            if (y + contextMenu.offsetHeight > window.innerHeight) {
+                y = window.innerHeight - contextMenu.offsetHeight - 5;
+            }
+            
+            contextMenu.style.left = `${x}px`;
+            contextMenu.style.top = `${y}px`;
+        });
+
+        document.addEventListener('click', (e) => {
+            if (e.button !== 2) contextMenu.style.display = 'none';
+        });
+
+        window.addEventListener('scroll', () => {
+            contextMenu.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
