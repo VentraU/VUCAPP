@@ -1,6 +1,6 @@
 <div align="center">
   <img width="128" src="./images/Logo.png" alt="Logogram Vucapp">
-  <h1><b>VentraUniverseCreateAPP (или сокращенно VUCAPP)</b></h1>
+  <h1><b>VUCAPP</b></h1>
   <p><i>Удобная IDE для сборок .exe-приложений для Windows 11 с дизайном WinUI 3.</i></p>
 
   [![License: MIT](https://img.shields.io/badge/Лицензия-MIT-red)](https://github.com/VentraKat/VUCAPP/blob/main/LICENSE)
@@ -9,7 +9,7 @@
 </div>
 
 ## 💡 Что такое VUCAPP?
-VUCAPP — это IDE с визуальным интерфейсом. Она позволяет легко создавать полноценные `.exe` программы под Windows 11 с современным дизайном **WinUI 3**. 
+VentraUniverseCreateAPP (или сокращенно VUCAPP) — это IDE с визуальным интерфейсом. Она позволяет легко создавать полноценные `.exe` программы под Windows 11 с современным дизайном **WinUI 3**. 
 
 Идеально подходит для новичков, но и для обычных разработчиков: вы собираете красивый интерфейс мышкой, а VUCAPP автоматически генерирует чистый код на **C#**.
 
